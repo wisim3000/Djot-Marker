@@ -3,6 +3,7 @@
   "displayName": "Djot Marker",
   "description": "Syntax highlightings and keybindings for Djot markup language.",
   "version": "0.0.1",
+  "publisher": "wisim3000",
   "repository": "https://github.com/wisim3000/Djot-Marker.git",
   "engines": {
     "vscode": "^1.77.0"
