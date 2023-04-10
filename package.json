@@ -1,0 +1,182 @@
+{
+  "name": "djot-marker",
+  "displayName": "Djot Marker",
+  "description": "Syntax highlightings and keybindings for Djot markup language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "djot",
+        "aliases": [
+          "Djot",
+          "djot"
+        ],
+        "extensions": [
+          ".dj",
+          ".djot"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "djot",
+        "scopeName": "source.djot",
+        "path": "./syntaxes/djot.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "djot-marker.setHeadingLevel",
+        "title": "Set Heading Level"
+      }
+    ],
+    "configurationDefaults": {
+      "[djot]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+          "other": "off",
+          "comments": "off",
+          "strings": "inline"
+        }
+      }
+    },
+    "configuration": {
+      "title": "Djot Highlighter",
+      "properties": {
+        "djot.usingBuiltInShortcuts.essential": {
+          "type": "boolean",
+          "default": true,
+          "description": "Default:\nCtrl+I --> Italic\nCtrl+B --> Bold"
+        },
+        "djot.usingBuiltInShortcuts.heading": {
+          "type": "boolean",
+          "default": true,
+          "description": "For heading levels 1-6:\nctrl+1 ~ ctrl+6\nparagraph: ctrl+0"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "editor.action.insertSnippet",
+        "key": "ctrl+b",
+        "mac": "cmd+b",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.essential",
+        "args": {
+          "langId": "djot",
+          "snippet": "*${TM_SELECTED_TEXT:$1}*"
+        }
+      },
+      {
+        "command": "editor.action.insertSnippet",
+        "key": "ctrl+i",
+        "mac": "cmd+i",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.essential",
+        "args": {
+          "langId": "djot",
+          "snippet": "_${TM_SELECTED_TEXT:$1}_"
+        }
+      },
+      {
+        "key": "ctrl+0",
+        "mac": "cmd+0",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 0
+        }
+      },
+      {
+        "key": "ctrl+1",
+        "mac": "cmd+1",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 1
+        }
+      },
+      {
+        "key": "ctrl+2",
+        "mac": "cmd+2",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 2
+        }
+      },
+      {
+        "key": "ctrl+3",
+        "mac": "cmd+3",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 3
+        }
+      },
+      {
+        "key": "ctrl+4",
+        "mac": "cmd+4",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 4
+        }
+      },
+      {
+        "key": "ctrl+5",
+        "mac": "cmd+5",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 5
+        }
+      },
+      {
+        "key": "ctrl+6",
+        "mac": "cmd+6",
+        "command": "djot-marker.setHeadingLevel",
+        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "args": {
+          "langId": "djot",
+          "level": 6
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
