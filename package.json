@@ -53,7 +53,7 @@
       }
     },
     "configuration": {
-      "title": "Djot Highlighter",
+      "title": "Djot Marker",
       "properties": {
         "djot.usingBuiltInShortcuts.essential": {
           "type": "boolean",
