@@ -72,9 +72,8 @@
         "command": "editor.action.insertSnippet",
         "key": "ctrl+b",
         "mac": "cmd+b",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.essential",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "snippet": "*${TM_SELECTED_TEXT:$1}*"
         }
       },
@@ -82,9 +81,8 @@
         "command": "editor.action.insertSnippet",
         "key": "ctrl+i",
         "mac": "cmd+i",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.essential",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "snippet": "_${TM_SELECTED_TEXT:$1}_"
         }
       },
@@ -92,9 +90,8 @@
         "key": "ctrl+0",
         "mac": "cmd+0",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 0
         }
       },
@@ -102,9 +99,8 @@
         "key": "ctrl+1",
         "mac": "cmd+1",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 1
         }
       },
@@ -112,9 +108,8 @@
         "key": "ctrl+2",
         "mac": "cmd+2",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 2
         }
       },
@@ -122,9 +117,8 @@
         "key": "ctrl+3",
         "mac": "cmd+3",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 3
         }
       },
@@ -132,9 +126,8 @@
         "key": "ctrl+4",
         "mac": "cmd+4",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 4
         }
       },
@@ -142,9 +135,8 @@
         "key": "ctrl+5",
         "mac": "cmd+5",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 5
         }
       },
@@ -152,9 +144,8 @@
         "key": "ctrl+6",
         "mac": "cmd+6",
         "command": "djot-marker.setHeadingLevel",
-        "when": "editorTextFocus && !editorReadonly && config.djot.usingBuiltInShortcuts.heading",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == djot && config.djot.usingBuiltInShortcuts.heading",
         "args": {
-          "langId": "djot",
           "level": 6
         }
       }
